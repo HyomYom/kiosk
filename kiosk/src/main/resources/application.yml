@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: kiosk-system
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: false
+    show-sql: true
+    database: mysql
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://172.17.224.34:3306/kiosk
+    username: root
+    password: dk!dlvhs1507.
+
+  jwt:
+    secret: dGpkbmZ0bHRoZHZrcm5kaHJtYWZoNTUxCg==
