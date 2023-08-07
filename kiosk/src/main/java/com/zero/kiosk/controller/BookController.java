@@ -66,12 +66,23 @@ public class BookController {
         return ResponseEntity.ok(bookEntities);
     }
 
+    /**
+     * 유저 예약 확인
+     * @param book
+     * @return
+     */
     @PostMapping("/check/customer")
     @PreAuthorize("hasRole('CUSTOMER')")
     public ResponseEntity<?> bookCheckUser(@RequestBody Book book) {
         BookEntity bookEntity = bookService.bookCheckUser(book);
         return ResponseEntity.ok(bookEntity);
     }
+
+    /**
+     * 가게(지점) 예약 확인
+     * @param book
+     * @return
+     */
 
     @PostMapping("/check/owner")
     @PreAuthorize("hasRole('OWNER')")

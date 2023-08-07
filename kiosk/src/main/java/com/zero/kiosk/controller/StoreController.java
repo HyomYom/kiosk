@@ -40,7 +40,13 @@ public class StoreController {
 
     /**
      * 매장 검색
+     * 1. 조건 설정
+     * 1) 가게명 -> 입력 글자가 들어간 가게 조회
+     * 2) 정렬 -> 지정 colum 기준 조회
+     * 3) 차순 -> 내림차순/오름차순 조회
      *
+     * 2. paging 처리
+     * 1) 위 조건을 Pageble에 담아 처리
      * @param store
      * @return
      */
@@ -67,7 +73,7 @@ public class StoreController {
         } else {
             pageable = pageRequest.of();
         }
-        Page<StoreEntity> storeEntities = storeService.searchStoreList(store, lat, lon, unit, pageable);
+        Page<StoreEntity> storeEntities = storeService.searchStoreList(store, lat, lon, unit,sort, dir, pageable);
         return ResponseEntity.ok(storeEntities);
     }
 

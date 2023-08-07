@@ -27,6 +27,10 @@ public class ReviewEntity extends BaseTimeEntity {
     private String title;
     private String contents;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bookId")
+    private BookEntity book;
+
 
     @ManyToOne
     @JoinColumn(name = "storeId")
@@ -45,6 +49,10 @@ public class ReviewEntity extends BaseTimeEntity {
         this.member = member;
         member.getReviews().add(this);
 
+    }
+    public void updateBook(BookEntity book){
+        this.book = book;
+        book.setReview(this);
     }
 
 }

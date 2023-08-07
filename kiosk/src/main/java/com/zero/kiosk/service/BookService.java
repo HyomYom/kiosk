@@ -35,6 +35,13 @@ public class BookService {
     private final StoreRepository storeRepository;
 
 
+    /**
+     * 1. 오류
+     * 1) 입력된 시간 앞뒤 10분 내 예약 불가 오류 발생
+     * 2) 현재 시간을 기준으로 이미 지난 시간은 예약 불가 오류 발생
+     * @param book(userId, storeName, bookDate)
+     * @return
+     */
     public BookEntity addBook(Book book) {
         var newBook = book.toEntity();
         boolean bookExist = this.bookRepository.existsByStoreNameAndBookDateBetween(book.getStoreName(),
@@ -47,10 +54,11 @@ public class BookService {
         }
         var member = this.memberRepository.findByLoginId(book.getUserId())
                 .orElseThrow(() -> new NotExistUser());
+
         newBook.updateMember(member);
-        this.bookRepository.save(newBook);
-        return this.bookRepository.findByStoreNameAndUserIdAndBookDate(book.getStoreName(),
-                book.getUserId(), book.getBookDate());
+//        return this.bookRepository.findByStoreNameAndUserIdAndBookDate(book.getStoreName(),
+//                book.getUserId(), book.getBookDate());
+        return this.bookRepository.save(newBook).setMember(null);
     }
 
     public List<BookEntity> bookSearchUser(Member member) {
@@ -83,6 +91,7 @@ public class BookService {
                 .build()).collect(Collectors.toList());
     }
 
+
     public BookEntity bookCheckOwner(Book book) {
         BookEntity bookEntity = bookRepository.findById(book.getId())
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 예약입니다."));
@@ -91,6 +100,12 @@ public class BookService {
         return bookRepository.save(bookEntity).setMember(null);
     }
 
+    /**
+     * 1. 오류
+     * 1) 가게 오너가 수락하지 않은 예약은 사용자가 확인할 수 없다.
+     * @param book(bookId)
+     * @return
+     */
     public BookEntity bookCheckUser(Book book) {
         BookEntity bookEntity = bookRepository.findById(book.getId())
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 예약입니다."));

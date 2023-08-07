@@ -13,10 +13,6 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity, Long>, JpaSpecificationExecutor<BookEntity> {
-    BookEntity findByStoreNameAndUserIdAndBookDate(String storeName,
-                                                   String userId, LocalDateTime bookDate);
     boolean existsByStoreNameAndBookDateBetween(String storeName, LocalDateTime start, LocalDateTime end);
 
-
-    List<BookEntity> findAllByUserId(String userId);
 }

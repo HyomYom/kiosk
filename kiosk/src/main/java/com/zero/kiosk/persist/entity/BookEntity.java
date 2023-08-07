@@ -2,6 +2,7 @@ package com.zero.kiosk.persist.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zero.kiosk.persist.entity.converter.BooleanToYNConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,6 +39,10 @@ public class BookEntity {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") //get
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss") //post
     private LocalDateTime bookDate;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "book")
+    private ReviewEntity review;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "memberId")

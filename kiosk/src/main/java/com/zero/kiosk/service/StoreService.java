@@ -13,12 +13,14 @@ import com.zero.kiosk.persist.utility.Utility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +33,18 @@ public class StoreService {
     private final MemberRepository memberRepository;
     private final Utility utility;
 
+
+    /**
+     * 1. 오류
+     * 1) 정보 누락 또는 등록하려는 가게 소유주 정보와 맴버 정보가 일치하지 않을 때
+     * 2) 가게 소유주의 이름으로 동일한 가게가 존재할 때
+     *
+     * 2. 관계 설정
+     * 1) member-store[OneToMany-ManyToOne] 설정 업데이트 후 저장
+     *
+     * @param store(storeName, userId, ownerName, address, longitude, latitude)
+     * @return
+     */
     public StoreEntity addStore(Store store) {
         var newStore = store.toEntity();
         var member = this.memberRepository.findByLoginId(store.getUserId())
@@ -38,6 +52,7 @@ public class StoreService {
         log.info(store.getOwnerName() + " " + member.getName());
         if (store == null || store.getStoreName().equals("") ||
                 !member.getName().equals(store.getOwnerName())
+                        && !member.getLoginId().equals(store.getUserId())
         ) {
             throw new InfoOmissionException();
         }
@@ -52,10 +67,22 @@ public class StoreService {
         return this.storeRepository.findByStoreName(store.getStoreName()).orElseThrow(() -> new RuntimeException("상점이 존재하지 않습니다."));
     }
 
+    /**
+     * 1. 거리 설정
+     * 1) 입력되는 좌표에 따라 현재 위치부터 가게까지의 거리를 제공
+     * 2) 거리는 조회 후 얻어지기 때문에 거리순으로 정렬시 정렬 후 재페이징 처리
+     * @param storeName
+     * @param lat
+     * @param lon
+     * @param unit
+     * @param pageable
+     * @return
+     */
     public Page<StoreEntity> searchStoreList(String storeName, double lat, double lon,
-                                             String unit, Pageable pageable) {
+                                             String unit, String sort,String dir, Pageable pageable) {
         Specification<StoreEntity> spec = Specification.where(StoreEntitySpecification.search(storeName));
-        return storeRepository.findAll(spec, pageable).map(e -> StoreEntity.builder()
+
+       Page<StoreEntity> storePage = storeRepository.findAll(spec, pageable).map(e -> StoreEntity.builder()
                 .id(e.getId())
                 .distance(utility.getDistance(e.getLatitude(), e.getLongitude(), lat, lon, unit))
                 .storeName(e.getStoreName())
@@ -65,6 +92,17 @@ public class StoreService {
                 .latitude(e.getLatitude())
                 .longitude(e.getLongitude())
                 .build());
+
+        if(sort.equals("distance") && dir.equals("desc")){
+            List<StoreEntity> collect = storePage.stream().sorted(Comparator.comparing(StoreEntity::getDistance).reversed()).collect(Collectors.toList());
+            storePage = new PageImpl<>(collect, pageable, collect.size());
+            return storePage;
+        } else if(sort.equals("distance") && dir.equals("asc")){
+            List<StoreEntity> collect = storePage.stream().sorted(Comparator.comparing(StoreEntity::getDistance)).collect(Collectors.toList());
+            storePage = new PageImpl<>(collect,pageable,collect.size());
+            return storePage;
+        }
+        return storePage;
     }
 
     public List<StoreEntity> searchOwnerStoreList(Member member) {
