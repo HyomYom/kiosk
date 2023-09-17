@@ -26,7 +26,7 @@
 - API's : Mailgun
 
 # ERD
-![ERD](https://github.com/HyomYom/kiosk/raw/main/file/read/KIOSK_ERD.png)
+![ERD](file/read/KIOSK_ERD.png)
 
 # 기능 구현
 
