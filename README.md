@@ -1,4 +1,4 @@
-# kokio-web-order-system
+# kiosk-system
 
 #프로젝트 소개
 
