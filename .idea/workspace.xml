@@ -6,48 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55778d60-9b85-4ba8-9865-fd49aa308d1b" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/KioskApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/KioskApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/controller/StoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/AbstractException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/AbstractException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/CustomExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/CustomExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/ErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/impl/AlreadyExistStoreException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/impl/AlreadyExistStoreException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/impl/AlreadyExistUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/impl/AlreadyExistUserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/impl/InfoOmissionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/impl/InfoOmissionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/impl/NotExistStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/impl/NotExistStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/exception/impl/NotExistUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/exception/impl/NotExistUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/model/constents/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/model/constents/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/StoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/entity/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/entity/MemberEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/entity/MemberEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/entity/ReviewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/entity/ReviewEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/entity/StoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/entity/StoreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/entity/converter/BooleanToYNConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/entity/converter/BooleanToYNConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/query/BookEntitySpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/query/BookEntitySpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/query/StoreEntitySpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/query/StoreEntitySpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/utility/BaseTimeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/utility/BaseTimeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/utility/PageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/utility/PageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/persist/utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/persist/utility/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/security/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/security/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/service/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/main/java/com/zero/kiosk/service/WriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/main/java/com/kiosk/service/WriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiosk/src/test/java/com/zero/kiosk/KioskApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kiosk/src/test/java/com/kiosk/KioskApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "H:/Spring/kiosk/kiosk",
+    "last_opened_file_path": "H:/결과물/Spring/kiosk/kiosk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,6 +79,7 @@
       <workItem from="1692595289525" duration="80000" />
       <workItem from="1692692933136" duration="9000" />
       <workItem from="1692947294795" duration="5000" />
+      <workItem from="1697318094812" duration="24000" />
     </task>
     <servers />
   </component>
