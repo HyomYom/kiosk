@@ -22,7 +22,7 @@
 - JDK 11.0.19
 - IDE : Intellij
 - Framework : SpringBoot(2.7.14)
-- Database : MySql(8.0 / JPA)
+- Database : MySql(8.0 / JPA) / Redis
 - Tools : IntelliJ, Docker
 - API's : Mailgun
 
